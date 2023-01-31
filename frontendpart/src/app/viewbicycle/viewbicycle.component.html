@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cost per day</th>
+            <th scope="col">Category</th>
+            <th scope="col">Description</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bicy of readBicycles">
+            <th scope="row">{{bicy.id}}</th>
+            <td>{{bicy.name}}</td>
+            <td>{{bicy.cost}}</td>
+            <td>{{bicy.category}}</td>
+            <td>{{bicy.description}}</td>
+            <td><button class="btn btn-danger" (click)="deleteName(bicy.name)">Delete</button></td>
+            <td><a [routerLink]="['/addbicycle',bicy.name]" class="btn btn-success">Update</a></td>
+          
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Booking Cancel</h1><hr>
+                </div>
+                <form>
+                    <div class="mb-3">
+                      <label  class="form-label">Bike Name</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="cancelbooking.name" name="  " >
+                    </div>              
+                    <button type="submit" type="submit"(click)="Bookingcancel()" class="btn btn-primary">Submit</button>
+                  </form>
+                  <a routerLink="/homepage">homepage</a>
+            </div>
+        </div>
+    </div>
+</div>

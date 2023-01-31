@@ -1,0 +1,34 @@
+<div class="container mt-3">
+  <div class="container mt-3">
+    <h2>Booking Details !!</h2>
+    <br>
+  <div class="row">
+
+    <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{successMsg}}</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+      <table class="table table-bodered">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">name</th>
+              <th scope="col">category</th>
+              <th scope="col">date</th>
+              <th scope="col">time</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usr of readBooking">
+              <th scope="row">{{usr.id}}</th>
+              <td>{{usr.name}}</td>
+              <td>{{usr.category}}</td>
+              <td>{{usr.date}}</td>
+              <td>{{usr.time}}</td>
+              <td><button class="btn btn-danger" (click)="deleteId(usr.id)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  

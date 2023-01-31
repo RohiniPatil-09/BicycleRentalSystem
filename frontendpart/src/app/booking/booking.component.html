@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h3>Book your bicycle now !!</h3><hr>
+                </div>
+                
+                <div *ngIf="errMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong>{{errMsg}}</strong> 
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>{{successMsg}}</strong> 
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <form [formGroup]="bookingForm" (ngSubmit)="bookingSubmit()">
+                    <div class="mb-3">
+                      <label  class="form-label">Bicycle Name</label>
+                      <input type="text" class="form-control" formControlName="name" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="bookingbicycle.name" name="  ">
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Category</label>
+                        <input type="text" class="form-control" formControlName="category" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="bookingbicycle.category" name="  ">
+                      </div>
+                    <div class="mb-3">
+                        <label  class="form-label">date</label>
+                        <input type="date" class="form-control" formControlName="date" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="bookingbicycle.date" name="  ">
+                      </div>
+                    <div class="mb-3">
+                        <label class="form-label">time</label>
+                        <input type="time" class="form-control" formControlName="time" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="bookingbicycle.time" name="  ">
+                    </div>
+                   
+                    <button type="submit" type="submit"(click)="Bicyclebooking()" class="btn btn-primary">Submit</button>
+                  </form>
+                  <a routerLink="/homepage">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
+</div>
+

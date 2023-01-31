@@ -1,0 +1,34 @@
+<div class="container mt-3">
+    <h2>Add your bicycle here !!</h2>
+<div class="row">
+
+    <!--show error-->
+    <div *ngIf="errMsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{errMsg}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <!--show success-->
+      <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{successMsg}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    <form [formGroup]="bicycleAddForm" (ngSubmit)="bicycleAdd()">
+        <div class="col-md-4 mt-4">
+            <input type="text" class="form-control" formControlName="name" placeholder="Enter bicycle name">
+        </div>
+        <div class="col-md-4 mt-2">
+            <input type="text" class="form-control" formControlName="cost" placeholder="Enter bicycle cost">
+        </div>
+        <div class="col-md-4 mt-2">
+            <input type="text" class="form-control" formControlName="category" placeholder="Enter bicycle category">
+        </div>
+        <div class="col-md-4 mt-2">
+            <input type="text" class="form-control" formControlName="description" placeholder="Enter bicycle description">
+        </div>
+        <div class="col-md-4 mt-4">
+            <button class="btn btn-primary">Add bicycle</button>
+        </div>
+    </form>
+</div>
+</div>
